@@ -1,0 +1,95 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+get_kine_programme:
+    path: /api/kineprog/{id}
+    controller: App\Controller\TestController::getKinesthesProgramsAndExercises
+    methods: ['GET', 'HEAD']
+
+conversation:
+    path: '/conversation/{kineId}/{patientId}'
+    controller: 'App\Controller\MessageController::getConversation'
+    methods: ['GET']
+
+get_patient_paiements:
+  path: '/api/patients/{id}/paiements'
+  controller: 'App\Controller\TestController::getPatientPaiements'
+  methods: ['GET']
+
+get_kine_emploi:
+    path: '/api/kine/{id}/emp'
+    controller: 'App\Controller\UserController::getKineEmploi'
+    methods: [GET]
+
+get_kine_paiements:
+  path: '/api/kine/{id}/paiements'
+  controller: 'App\Controller\TestController::getKinePaiements'
+  methods: ['GET']
+
+edi_rendez_vous:
+  path: '/{id}/editrend'
+  controller: 'App\Controller\UserController::EditRendezVous'
+  methods: ['POST']
+
+
+edi_stat:
+  path: '/editstat'
+  controller: 'App\Controller\UserController::EditStat'
+  methods: ['POST']
+
+api_dossiers_medicaux_by_rendez_vous:
+    path: '/api/dossiers-medicaux-by-rendez-vous'
+    methods: ['POST']
+    controller: 'App\Controller\UserController::getDossiersMedicauxByRendezVous'
+
+programme_update_description:
+    path: '/api/programmes/{id}'
+    controller: 'App\Controller\UserController::updateDescription'
+    methods: ['PUT']
+
+get_patients_by_kine:
+    path: '/api/patients/{kineId}'
+    controller: 'App\Controller\UserController::getPatientsByKine'
+    methods: ['GET']
+
+
+get_kine_pat:
+    path: '/api/nompatients/{id}'
+    controller: 'App\Controller\TestController::getKinestheesProgramsAndExercises'
+    methods: ['GET']
+
+get_patient_programme:
+    path: '/api/patientprog/{id}'
+    controller: 'App\Controller\TestController::getPatientProgramsAndExercises'
+    methods: ['GET']
+
+kinesitherapeutes_get_by_id:
+    path: '/kinesitherapeutes/{id}'
+    controller: 'App\Controller\UserController::getKinesitherapeuteById'
+
+delete_rendez_vous:
+    path: /rendez-vous-supp/{id}
+    controller: App\Controller\KineController::deleteRendezVous
+    methods: [DELETE]
+
+delete_programme:
+    path: /programme/supp/{id}
+    controller: App\Controller\UserController::deleteProgramme
+    methods: [DELETE]
+
+send_email:
+    path: /send-email
+    controller: App\Controller\MailerController::sendEmail
+    methods: [POST]
+
+get_all_kinesitherapeutes:
+  path: /admin/listkine
+  controller: 'App\Controller\UserController::getAllKinesitherapeutes'
+  methods: ['GET']
+
+
+
+
+
+
